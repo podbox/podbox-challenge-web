@@ -1,0 +1,8 @@
+{
+  "name": "podbox-challenge-web",
+  "version": "0.0.0",
+  "dependencies": {
+    "node-static": "^0.7.6",
+    "sockjs": "^0.3.15"
+  }
+}
