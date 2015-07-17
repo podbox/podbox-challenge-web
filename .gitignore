@@ -1,4 +1,18 @@
+.DS_Store
+thumbs.db
+*~
+local.properties
+.settings
+.loadpath
+.project
+.lock-wscript
+.buildpath
 .idea/
-node_modules/
 *.iml
 *.log
+*.pid
+*.seed
+# specific to this project
+node_modules
+bower_components
+public

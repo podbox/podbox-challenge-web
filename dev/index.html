@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <title>٩◔̯◔۶</title>
+    <title>٩◔̯◔۶ Podbox web challenge</title>
 </head>
 <body>
 <script src="//cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.0.0/sockjs.min.js"></script>
@@ -13,7 +13,7 @@
         console.log('onopen', event);
     };
     sockjs.onmessage = function (message) {
-        console.log('onmessage', message);
+        console.log('onmessage', message.data);
     };
     sockjs.onclose = function (event) {
         console.log('onclose', event);

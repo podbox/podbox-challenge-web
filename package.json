@@ -2,7 +2,13 @@
   "name": "podbox-challenge-web",
   "version": "0.0.0",
   "dependencies": {
-    "node-static": "^0.7.6",
-    "sockjs": "^0.3.15"
+    "faker": "3.0.0",
+    "node-static": "0.7.6",
+    "shortid": "2.2.2",
+    "sockjs": "0.3.15"
+  },
+  "scripts": {
+    "prestart": "(if [ ! -d public ]; then mkdir public; elif [ $(ls -A public) ]; then rm public/*; fi) && (cp dev/*.* public)",
+    "startnorandom": "RANDOM=ALWAYS npm start"
   }
 }
