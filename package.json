@@ -8,7 +8,7 @@
     "sockjs": "0.3.15"
   },
   "scripts": {
-    "prestart": "(if [ ! -d public ]; then mkdir public; elif [ $(ls -A public) ]; then rm public/*; fi) && (cp dev/*.* public)",
+    "prestart": "(if [ ! -d public ]; then mkdir public; elif [ '$(ls -A public)' ]; then rm public/*; fi) && (cp dev/*.* public)",
     "startnorandom": "RANDOM=ALWAYS npm start"
   }
 }
