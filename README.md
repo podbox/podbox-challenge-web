@@ -1,7 +1,9 @@
 # The Podbox Web Challenge!
-<img style="float: right;" alt="We want you!" title="We want you!" width="350px" src="https://s3.amazonaws.com/podbox-blog/blog/wp-content/uploads/2015/05/we-want-you.jpg">
+<img align="right" alt="We want you!" title="We want you!" width="350px" src="https://s3.amazonaws.com/podbox-blog/blog/wp-content/uploads/2015/05/we-want-you.jpg" />
 So you are willing to have fun working along the R&D team of [Podbox](https://www.podbox.com/about-us)? Here is the first step, which will give you the freedom to demonstrate some of your web developer skills!
-<br clear="all">
+
+<br clear="all" />
+
 This repository contains a skeleton of a contacts manager web application. The server handles a list of contacts which evolves randomly through time: some fields will be updated (firstname, email, etc.), some contacts will be created, others will be deleted. These updates are sent to the browser through a websocket.
 
 Your goals are:
