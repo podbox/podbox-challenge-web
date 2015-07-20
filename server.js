@@ -1,13 +1,13 @@
 var http = require('http');
 var sockjs = require('sockjs');
 var nodeStatic = require('node-static');
-var contactManager = require('./contacts-manager/index.js');
+var contactsManager = require('./contacts-manager');
 
 // creates a websocket server and manages the connection with the browser
 var sockjsOptions = {};
 var sockjsEvents = sockjs.createServer(sockjsOptions);
 sockjsEvents.on('connection', function(connection) {
-    contactManager(connection);
+    contactsManager(connection);
 });
 
 // serves the content of the webapp directory

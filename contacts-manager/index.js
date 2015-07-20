@@ -2,7 +2,7 @@
  * Manages the contacts and dispatch events on the websocket connection
  */
 (function (moduleManager) {
-    moduleManager.exports = contactManager;
+    moduleManager.exports = contactsManager;
 
     // fake contacts data generators
     var faker = require('faker'); // https://github.com/marak/Faker.js/
@@ -49,6 +49,10 @@
         if (typeof domainname === 'undefined') {
             domainname = lastname.replace(/\W/g, '') + '.' + faker.internet.domainSuffix();
         }
+        // no email address for missing domain name
+        else if (domainname === null || domainname === '') {
+            return null;
+        }
 
         // creates the username part
         var username;
@@ -91,8 +95,8 @@
         return address;
     }
 
-    function createDomainName(companyName) {
-        return companyName === null ? null : companyName.replace(/\W/g, '') + (rnd() ? '.com' : '.org');
+    function createDomainName(companyname) {
+        return (companyname === null || typeof companyname === 'undefined') ? null : companyname.replace(/\W/g, '') + (rnd() ? '.com' : '.org');
     }
 
     /**
@@ -181,6 +185,12 @@
     function patchContact(contact) {
         var patch = { id: contact.id };
         if (rnd(-10)) {
+            if (addInPatch(patch, contact, 'firstname', faker.name.firstName())) {
+                addInPatch(patch, contact, 'homeemail', createEmailAddress(contact.firstname, contact.lastname));
+                addInPatch(patch, contact, 'workemail', createEmailAddress(contact.firstname, contact.lastname, createDomainName(contact.company)));
+            }
+        }
+        else if (rnd(-10)) {
             addInPatch(patch, contact, 'homeemail', rnd(-3) ? null : createEmailAddress(contact.firstname, contact.lastname));
         }
 
@@ -293,14 +303,14 @@
         // plans the next event
         setTimeout(function() {
             periodicallyUpdateContacts(contactsCache, connection);
-        }, 1000);
+        }, 200 + 1500*Math.random());
     }
 
     /**
      * Periodically sends contact creations, updates or deletions on the websocket connection
      * @param connection the websocket connection
      */
-    function contactManager(connection) {
+    function contactsManager(connection) {
         periodicallyUpdateContacts([], connection);
     }
 })(module);
