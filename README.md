@@ -1,5 +1,7 @@
+This challenge is related to the [Podbox's growth hacker position](https://www.podbox.com/blog/podbox-recruits-a-web-developer-marketer-growth-hacker-rennes/). **This position has been fulfilled** as of 1st September 2015. Thanks to all the candidates that have participated in this challenge, you were awesome and the competition was tough. Stay tuned on [Podbox job offers stream](https://www.podbox.com/blog/category/job-offers/), Podbox hires often.
+
 # The Podbox web Challenge!
-<img align="right" alt="We want you!" title="We want you!" width="350px" src="https://s3.amazonaws.com/podbox-blog/blog/wp-content/uploads/2015/05/we-want-you.jpg" />
+<img align="right" alt="We want you!" title="We want you!" width="350px" src="https://s3.amazonaws.com/podbox-blog/blog/wp-content/uploads/2015/07/Growth-Hacking-Your-Startup-Be-A-Pirate-1024x512.jpg" />
 So you are willing to have fun working along with the [Podbox](https://www.podbox.com/about-us) team? Here is the first step, which will give you the freedom to demonstrate some of your web developer skills!
 
 <br clear="all" />
